@@ -1,0 +1,195 @@
+body {
+  background: #000;
+  overflow: hidden;
+  font-family: Verdana;
+}
+
+body h1 {
+  color: #abc;
+  position: absolute;
+  margin: 0;
+  top: 20px;
+  right: 20px;
+  text-transform: uppercase;
+  z-index: 10000;
+  text-shadow: 1px 1px 3px #000;
+  text-align: right;
+}
+
+body ul {
+  position: absolute;
+  color: #abc;
+  text-transform: uppercase;
+  z-index: 10000;
+  text-shadow: 1px 1px 3px #000;
+  font-weight: 600;
+  top: 120px;
+  right: 20px;
+  margin-left: 0;
+  padding-left: 0;
+  text-align: right;
+}
+
+body ul li {
+  font-size: 20px;
+  list-style-type: none;
+  margin: 10px;
+  margin-left: 0;
+}
+
+body ul li:hover {
+  cursor: pointer;
+  color: #2980b9;
+  text-shadow: 1px 1px 3px #fff;
+}
+
+.container {
+  position: relative;
+  margin: 0 auto;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  -webkit-perspective: 750px;
+          perspective: 750px;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+.container.anim .inner {
+  -webkit-transition: 1s all ease-in-out;
+  transition: 1s all ease-in-out;
+}
+
+.container.anim .smallCube,
+.container.tracking .smallCube {
+  -webkit-transform: scale3d(0.3, 0.3, 0.3);
+          transform: scale3d(0.3, 0.3, 0.3);
+}
+
+.container .inner {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform-origin: 50vw 50vw 0;
+          transform-origin: 50vw 50vw 0;
+}
+
+.container .sub {
+  width: 100vw;
+  height: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  background-image: url("../img/2623a.jpg");
+  background-repeat: no-repeat;
+  background-size: 400% 300%;
+}
+
+.container .sub.front {
+  -webkit-transform: translateZ(-50vw) scale(1.01);
+          transform: translateZ(-50vw) scale(1.01);
+  background-position: 33.333% 50%;
+}
+
+.container .sub.left {
+  -webkit-transform: translate3d(-50vw, 0, 0) rotateY(90deg) scale(1.01);
+          transform: translate3d(-50vw, 0, 0) rotateY(90deg) scale(1.01);
+  background-position: 0% 50%;
+}
+
+.container .sub.right {
+  -webkit-transform: translate3d(50vw, 0, 0) rotateY(-90deg) scale(1.01);
+          transform: translate3d(50vw, 0, 0) rotateY(-90deg) scale(1.01);
+  background-position: 66.6777% 50%;
+}
+
+.container .sub.back {
+  -webkit-transform: translateZ(50vw) rotateY(180deg) scale(1.01);
+          transform: translateZ(50vw) rotateY(180deg) scale(1.01);
+  background-position: 100% 50%;
+}
+
+.container .sub.top {
+  -webkit-transform: translate3d(0, -50vw, 0) rotateX(-90deg);
+          transform: translate3d(0, -50vw, 0) rotateX(-90deg);
+  background-position: 33.333% 0%;
+}
+
+.container .sub.bottom {
+  -webkit-transform: translate3d(0, 50vw, 0) rotateX(90deg);
+          transform: translate3d(0, 50vw, 0) rotateX(90deg);
+  background-position: 33.333% 100%;
+}
+
+.container .smallCube {
+  position: absolute;
+  width: 50vw;
+  height: 50vw;
+  margin-top: 25%;
+  left: 50%;
+  margin-left: -25vw;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform: scale3d(0.75, 0.75, 0.75);
+          transform: scale3d(0.75, 0.75, 0.75);
+  -webkit-transition: 0.2s all ease-in-out;
+  transition: 0.2s all ease-in-out;
+}
+
+.container .smallCube .side {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.container .smallCube .side:hover {
+  -webkit-filter: brightness(1.5);
+          filter: brightness(1.5);
+}
+
+.container .smallCube .side iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.container .smallCube .side > div {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center center;
+}
+
+.container .smallCube .side.front {
+  -webkit-transform: translateZ(25vw);
+          transform: translateZ(25vw);
+}
+
+.container .smallCube .side.back {
+  -webkit-transform: translateZ(-25vw) rotateY(180deg);
+          transform: translateZ(-25vw) rotateY(180deg);
+}
+
+.container .smallCube .side.right {
+  -webkit-transform: translate3d(25vw, 0, 0) rotateY(90deg);
+          transform: translate3d(25vw, 0, 0) rotateY(90deg);
+}
+
+.container .smallCube .side.left {
+  -webkit-transform: translate3d(-25vw, 0, 0) rotateY(-90deg);
+          transform: translate3d(-25vw, 0, 0) rotateY(-90deg);
+}
+
+.container .smallCube .side.top {
+  -webkit-transform: translate3d(0, -25vw, 0) rotateX(90deg);
+          transform: translate3d(0, -25vw, 0) rotateX(90deg);
+}
+
+.container .smallCube .side.bottom {
+  -webkit-transform: translate3d(0, 25vw, 0) rotateX(-90deg);
+          transform: translate3d(0, 25vw, 0) rotateX(-90deg);
+}
